@@ -1,0 +1,65 @@
+﻿/*
+ * Sims2Tools - a toolkit for manipulating The Sims 2 DBPF files
+ *
+ * William Howard - 2020-2026
+ *
+ * Parts of this code derived from the SimPE project - https://sourceforge.net/projects/simpe/
+ * Parts of this code derived from the SimUnity2 project - https://github.com/LazyDuchess/SimUnity2 
+ * Parts of this code may have been decompiled with the JetBrains decompiler
+ *
+ * Permission granted to use this code in any way, except to claim it as your own or sell it
+ */
+
+using Sims2Tools.DBPF.CPF;
+using Sims2Tools.DBPF.IO;
+using Sims2Tools.DBPF.Package;
+using System.Xml;
+
+namespace Sims2Tools.DBPF.SceneGraph.BINX
+{
+    // See https://modthesims.info/wiki.php?title=BINX
+    public class Binx : SgRefCpf
+    {
+        // See https://modthesims.info/wiki.php?title=List_of_Formats_by_Name
+        public static readonly TypeTypeID TYPE = (TypeTypeID)0x0C560F39;
+        public const string NAME = "BINX";
+
+        public override string KeyName => "Binary Index";
+
+        public Binx(DBPFEntry entry) : base(entry)
+        {
+        }
+
+        public Binx(DBPFEntry entry, DbpfReader reader) : base(entry, reader)
+        {
+            if (GetItem("objectidx") != null) sgIdrIndexes.Add(ObjectIdx);
+        }
+
+        public Binx Duplicate(DBPFKey dbpfKey)
+        {
+            Binx newBinx = new Binx(new DBPFEntry(dbpfKey));
+
+            foreach (string itemName in GetItemNames())
+            {
+                CpfItem item = GetItem(itemName).Clone();
+
+                newBinx.AddItem(item);
+            }
+
+            return newBinx;
+        }
+
+        public uint ObjectIdx => GetItem("objectidx").UIntegerValue;
+        public uint IconIdx => GetItem("iconidx").UIntegerValue;
+
+        public uint StringSetIdx => GetItem("stringsetidx").UIntegerValue;
+        public uint StringIndex => GetItem("stringindex").UIntegerValue;
+
+        public int SortIndex => GetItem("sortindex").IntegerValue;
+
+        public override XmlElement AddXml(XmlElement parent)
+        {
+            return AddXml(parent, NAME);
+        }
+    }
+}

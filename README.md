@@ -77,13 +77,14 @@ GedcomExporter.Cli.exe <hoodFolder> [out.ged] [--pets] [--npcs] [--no-deceased] 
 
 ## Building from source
 
-The projects live under `whoward69/Source_Code/`, alongside a full checkout of the [Sims2Tools](https://github.com/whoward69/Sims2Tools) solution they depend on:
+The projects live under `src/`:
 
 - `GedcomExporter.Core` — the DBPF/hood loading, tie-graph, and GEDCOM-writing logic (no UI).
 - `GedcomExporter` — the WinForms GUI.
 - `GedcomExporter.Cli` — the command-line front end shown above.
+- `DbpfLibrary`, `UtilsLibrary`, `UtilsGraphicsLibrary` — vendored, unmodified copies of William Howard's [Sims2Tools](https://github.com/whoward69/Sims2Tools) libraries that the three projects above depend on.
 
-Open `whoward69/Source_Code/Sims2Tools.sln` in Visual Studio (2019+) with the .NET Framework 4.8 targeting pack installed, and build. All three `GedcomExporter*` projects reference `DbpfLibrary` and `UtilsLibrary` from the rest of the solution.
+Open `src/Sims2GenealogyExporter.sln` in Visual Studio (2019+) with the .NET Framework 4.8 targeting pack installed, restore NuGet packages, and build.
 
 ## Known limitations (why this is a beta)
 

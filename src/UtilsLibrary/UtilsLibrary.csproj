@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04C2A4A9-5CA5-4097-8375-8D54BEAD71EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sims2Tools</RootNamespace>
+    <AssemblyName>UtilsLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="log4net, Version=3.3.0.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.3.3.0\lib\net462\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft-WindowsAPICodePack-Core.1.1.5\lib\net48\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.5.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft-WindowsAPICodePack-Shell.1.1.5\lib\net48\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\ObjectThumbnailsCache.cs" />
+    <Compile Include="Cache\Thumbnails\BuildThumbnailsCache.cs" />
+    <Compile Include="Cache\Thumbnails\BuyThumbnailsCache.cs" />
+    <Compile Include="Cache\Thumbnails\HoodThumbnailsCache.cs" />
+    <Compile Include="Cache\Thumbnails\CasThumbnailsCache.cs" />
+    <Compile Include="Cache\Thumbnails\CigenCache.cs" />
+    <Compile Include="Cache\GameDataCache.cs" />
+    <Compile Include="Cache\PackageCache.cs" />
+    <Compile Include="Cache\SceneGraphCache.cs" />
+    <Compile Include="Cache\ClothingThumbnailsCache.cs" />
+    <Compile Include="Controls\ControlHelper.cs" />
+    <Compile Include="Controls\GraphicHelper.cs" />
+    <Compile Include="Controls\InterestTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InterestTracker.Designer.cs">
+      <DependentUpon>InterestTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SkillTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SkillTracker.Designer.cs">
+      <DependentUpon>SkillTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PickerDialog.Designer.cs">
+      <DependentUpon>PickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SimTrackingBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextProgressBar.Designer.cs">
+      <DependentUpon>TextProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IntTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IntTextBox.Designer.cs">
+      <DependentUpon>IntTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UIntTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UIntTextBox.Designer.cs">
+      <DependentUpon>UIntTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GuidTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GuidTextBox.Designer.cs">
+      <DependentUpon>GuidTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FloatTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FloatTextBox.Designer.cs">
+      <DependentUpon>FloatTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DdsConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DdsConfigDialog.Designer.cs">
+      <DependentUpon>DdsConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbpfCache\DbpfFileCache.cs" />
+    <Compile Include="Dialogs\MsgBox.cs" />
+    <Compile Include="Dialogs\CreatorConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CreatorConfigDialog.Designer.cs">
+      <DependentUpon>CreatorConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EpSPConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EpSPConfigDialog.Designer.cs">
+      <DependentUpon>EpSPConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TextAndTextEntryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TextAndTextEntryDialog.Designer.cs">
+      <DependentUpon>TextAndTextEntryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TreePickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TreePickerDialog.Designer.cs">
+      <DependentUpon>TreePickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ListPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ListPickerDialog.Designer.cs">
+      <DependentUpon>ListPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TitleAndDescEntryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TitleAndDescEntryDialog.Designer.cs">
+      <DependentUpon>TitleAndDescEntryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TextEntryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TextEntryDialog.Designer.cs">
+      <DependentUpon>TextEntryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SearchReplaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SearchReplaceDialog.Designer.cs">
+      <DependentUpon>SearchReplaceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exporter\Exporter.cs" />
+    <Compile Include="Exporter\IExporter.cs" />
+    <Compile Include="Exporter\Extractor.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helpers\ColourHelper.cs" />
+    <Compile Include="Helpers\HoodHelpers.cs" />
+    <Compile Include="Helpers\CpfHelper.cs" />
+    <Compile Include="IO\PjseStringFileReader.cs" />
+    <Compile Include="IO\Sims2Directory.cs" />
+    <Compile Include="NamedValue\NamedValue.cs" />
+    <Compile Include="SimpeData.cs" />
+    <Compile Include="GameData.cs" />
+    <Compile Include="Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sims2Tools.cs" />
+    <Compile Include="Dialogs\ThumbnailWarningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ThumbnailWarningDialog.Designer.cs">
+      <DependentUpon>ThumbnailWarningDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ConfigDialog.Designer.cs">
+      <DependentUpon>ConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\MruList.cs" />
+    <Compile Include="Persistence\RegistryTools.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dialogs\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Sims2String.cs" />
+    <Compile Include="Updates\Updater.cs" />
+    <Compile Include="Win32\CBTHook.cs" />
+    <Compile Include="Win32\Win32API.cs" />
+    <Compile Include="Win32\WindowsHook.cs" />
+    <Compile Include="Win32\WndProcRetHook.cs" />
+    <EmbeddedResource Include="Controls\InterestTracker.resx">
+      <DependentUpon>InterestTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SkillTracker.resx">
+      <DependentUpon>SkillTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IntTextBox.resx">
+      <DependentUpon>IntTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UIntTextBox.resx">
+      <DependentUpon>UIntTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GuidTextBox.resx">
+      <DependentUpon>GuidTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FloatTextBox.resx">
+      <DependentUpon>FloatTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DdsConfigDialog.resx">
+      <DependentUpon>DdsConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CreatorConfigDialog.resx">
+      <DependentUpon>CreatorConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EpSPConfigDialog.resx">
+      <DependentUpon>EpSPConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TextAndTextEntryDialog.resx">
+      <DependentUpon>TextAndTextEntryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TreePickerDialog.resx">
+      <DependentUpon>TreePickerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ListPickerDialog.resx">
+      <DependentUpon>ListPickerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TitleAndDescEntryDialog.resx">
+      <DependentUpon>TitleAndDescEntryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TextEntryDialog.resx">
+      <DependentUpon>TextEntryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SearchReplaceDialog.resx">
+      <DependentUpon>SearchReplaceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ThumbnailWarningDialog.resx">
+      <DependentUpon>ThumbnailWarningDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ConfigDialog.resx">
+      <DependentUpon>ConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Dialogs\ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\XML\primitivesShortNames.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XML\primitives.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XML\semiglobals.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XML\languages.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\XML\textlists.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DbpfLibrary\DbpfLibrary.csproj">
+      <Project>{fbecabcd-0403-4b7e-9992-01562a62db83}</Project>
+      <Name>DbpfLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsGraphicsLibrary\UtilsGraphicsLibrary.csproj">
+      <Project>{3c083fc2-13a8-48e6-8559-4ff69067a4db}</Project>
+      <Name>UtilsGraphicsLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.4.0.50\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.4.0.50\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.4.0.50\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SlowCheetah.4.0.50\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+  </Target>
+</Project>

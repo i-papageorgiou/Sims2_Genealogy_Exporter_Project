@@ -1,0 +1,15 @@
+# Third-party vendored code (William Howard's Sims2Tools) — excluded from
+# language stats and collapsed in diffs.
+src/DbpfLibrary/**          linguist-vendored=true
+src/UtilsLibrary/**         linguist-vendored=true
+src/UtilsGraphicsLibrary/** linguist-vendored=true
+
+# VS-generated scaffolding inside our own projects.
+src/GedcomExporter*/**/*.Designer.cs   linguist-generated=true
+src/GedcomExporter*/**/AssemblyInfo.cs linguist-generated=true
+
+# Built release artifacts, not source.
+Release_beta1/** linguist-vendored=true
+
+# GEDCOM isn't a language Linguist recognizes; treat it as plain text.
+*.ged linguist-language=Text
