@@ -9,9 +9,9 @@ Genealogy Exporter:
 - **GedcomExporter.Cli** — the headless command-line front end
   (`GedcomExporter.Cli.exe`).
 
-`GuiHarness.cs` is a standalone reflection-based test harness used to drive
-the GUI's private handlers during validation; it's not part of the shipped
-build.
+A standalone reflection-based test harness used to drive the GUI's private
+handlers during validation lives outside this folder, in `../tools/`; it's
+not part of the shipped build and isn't one of the projects above.
 
 ## Dependency: Sims2Tools
 
@@ -22,7 +22,7 @@ libraries, included here **unmodified** under his published Code Reuse Policy
 `DbpfLibrary` is what actually reads The Sims 2's `.package` (DBPF) file
 format; `UtilsLibrary` (which itself depends on `UtilsGraphicsLibrary`)
 provides shared helpers used by the GUI. Everything else in this folder
-(`GedcomExporter`, `GedcomExporter.Core`, `GedcomExporter.Cli`, `GuiHarness.cs`)
+(`GedcomExporter`, `GedcomExporter.Core`, `GedcomExporter.Cli`)
 is this project's own code.
 
 To build:
