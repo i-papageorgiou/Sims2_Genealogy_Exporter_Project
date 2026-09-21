@@ -8,8 +8,5 @@ src/UtilsGraphicsLibrary/** linguist-vendored=true
 src/GedcomExporter*/**/*.Designer.cs   linguist-generated=true
 src/GedcomExporter*/**/AssemblyInfo.cs linguist-generated=true
 
-# Built release artifacts, not source.
-Release_beta1/** linguist-vendored=true
-
 # GEDCOM isn't a language Linguist recognizes; treat it as plain text.
 *.ged linguist-language=Text
