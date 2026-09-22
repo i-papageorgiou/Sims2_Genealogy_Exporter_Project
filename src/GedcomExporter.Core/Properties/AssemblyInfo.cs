@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GedcomExporter.Core")]
 [assembly: AssemblyDescription("Sims 2 hood genealogy -> GEDCOM engine")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Gedcom Exporter")]
 [assembly: AssemblyProduct("GedcomExporter.Core")]
 [assembly: AssemblyCopyright("Copyright © 2026")]
 [assembly: AssemblyTrademark("")]

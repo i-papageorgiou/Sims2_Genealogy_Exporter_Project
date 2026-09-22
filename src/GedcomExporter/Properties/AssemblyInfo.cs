@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GedcomExporter")]
 [assembly: AssemblyDescription("Export a Sims 2 neighborhood's genealogy to a GEDCOM file")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Gedcom Exporter")]
 [assembly: AssemblyProduct("GedcomExporter")]
 [assembly: AssemblyCopyright("Copyright © 2026")]
 [assembly: AssemblyTrademark("")]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GedcomExporter.Cli")]
 [assembly: AssemblyDescription("Headless test harness for the Sims 2 Gedcom Exporter engine")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Gedcom Exporter")]
 [assembly: AssemblyProduct("GedcomExporter.Cli")]
 [assembly: AssemblyCopyright("Copyright © 2026")]
 [assembly: AssemblyTrademark("")]
