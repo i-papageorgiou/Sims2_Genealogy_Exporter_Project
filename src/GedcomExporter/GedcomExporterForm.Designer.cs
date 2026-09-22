@@ -104,6 +104,8 @@ namespace GedcomExporter
             this.panelTop.Location = new System.Drawing.Point(0, 24);
             this.panelTop.Name = "panelTop";
             this.panelTop.Padding = new System.Windows.Forms.Padding(10);
+            this.panelTop.AutoSize = true;
+            this.panelTop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelTop.Size = new System.Drawing.Size(700, 140);
             this.panelTop.TabIndex = 1;
             this.panelTop.Controls.Add(this.tableInputs);

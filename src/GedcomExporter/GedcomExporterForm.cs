@@ -85,7 +85,7 @@ namespace GedcomExporter
         {
             selectHoodDialog.InitialDirectory = textHoodPath.Text;
 
-            if (selectHoodDialog.ShowDialog(this.Handle) == CommonFileDialogResult.Ok)
+            if (selectHoodDialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 textHoodPath.Text = selectHoodDialog.FileName;
                 TryAutoFillOutputPath(selectHoodDialog.FileName);
